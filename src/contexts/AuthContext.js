@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
       console.log('Attempting login with:', { email });
       
       // Use the REAL login endpoint, not the test one
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
     try {
       console.log('Attempting registration with:', { email, name });
       
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
